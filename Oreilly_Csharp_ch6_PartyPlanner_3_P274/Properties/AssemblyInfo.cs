@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 組件的一般資訊是由下列的屬性集控制。
 // 變更這些屬性的值即可修改組件的相關
 // 資訊。
-[assembly: AssemblyTitle("Oreilly_Csharp_ch6_PartyPlanner_3_P274")]
+[assembly: AssemblyTitle("Oreilly_Csharp_ch6_PartyPlanner_2_P240")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Oreilly_Csharp_ch6_PartyPlanner_3_P274")]
+[assembly: AssemblyProduct("Oreilly_Csharp_ch6_PartyPlanner_2_P240")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 下列 GUID 為專案公開 (Expose) 至 COM 時所要使用的 typelib ID
-[assembly: Guid("be3af1e2-9910-4b9b-b4cd-5aeb2dfd06dd")]
+[assembly: Guid("95da5a19-c34d-460d-b906-839825e3f7b1")]
 
 // 組件的版本資訊由下列四個值所組成: 
 //

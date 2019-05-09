@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BE3AF1E2-9910-4B9B-B4CD-5AEB2DFD06DD}</ProjectGuid>
+    <ProjectGuid>{95DA5A19-C34D-460D-B906-839825E3F7B1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Oreilly_Csharp_ch6_PartyPlanner_3_P274</RootNamespace>
-    <AssemblyName>Oreilly_Csharp_ch6_PartyPlanner_3_P274</AssemblyName>
+    <RootNamespace>Oreilly_Csharp_ch6_PartyPlanner_2_P240</RootNamespace>
+    <AssemblyName>Oreilly_Csharp_ch6_PartyPlanner_2_P240</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BirthdayParty.cs" />
+    <Compile Include="DinnerParty.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +56,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

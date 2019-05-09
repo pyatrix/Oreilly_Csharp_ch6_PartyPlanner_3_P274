@@ -44,7 +44,7 @@ namespace Oreilly_Csharp_ch6_PartyPlanner_3_P274.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Oreilly_Csharp_ch6_PartyPlanner_3_P274.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Oreilly_Csharp_ch6_PartyPlanner_2_P240.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
