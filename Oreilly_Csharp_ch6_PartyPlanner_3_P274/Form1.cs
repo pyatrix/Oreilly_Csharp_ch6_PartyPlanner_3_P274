@@ -58,7 +58,7 @@ namespace Oreilly_Csharp_ch6_PartyPlanner_3_P274
 
         private void DinnerHealthyCheak_CheckedChanged(object sender, EventArgs e)
         {
-            dinnerParty.HealthyDecorations = DinnerHealthyCheak.Checked;
+            dinnerParty.HealthyOption = DinnerHealthyCheak.Checked;
             DisplayDinnerPartyCost();
         }
 

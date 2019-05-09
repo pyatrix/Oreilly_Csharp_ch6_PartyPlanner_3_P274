@@ -6,20 +6,25 @@ using System.Threading.Tasks;
 
 namespace Oreilly_Csharp_ch6_PartyPlanner_3_P274
 {
-    class BirthdayParty
+    class BirthdayParty:Party
     {
-        public const int CostOfFoodPerPerson = 25;
-        public int NumberOfPeople { get; set; }
-        public bool FancyDecorations { get; set; }
-        public string CakeWriting { get;set; }
-        
         public BirthdayParty(int numberOfPeople,bool fancyDecorations, string cakeWriting)
         {
             NumberOfPeople = numberOfPeople;
             FancyDecorations = fancyDecorations;
             CakeWriting = cakeWriting;
         }
-
+        public string CakeWriting { get; set; }
+        private int ActualLength
+        {
+            get
+            {
+                if (CakeWriting.Length > MaxWritingLength())
+                    return MaxWritingLength();
+                else
+                    return CakeWriting.Length;
+            }
+        }
         private int CakeSize()
         {
             if (NumberOfPeople <= 4)
@@ -27,7 +32,6 @@ namespace Oreilly_Csharp_ch6_PartyPlanner_3_P274
             else
                 return 16;
         }
-
         private int MaxWritingLength()
         {
             if (CakeSize() == 8)
@@ -35,18 +39,6 @@ namespace Oreilly_Csharp_ch6_PartyPlanner_3_P274
             else
                 return 40;
         }
-
-        private int ActualLength
-        {
-            get
-            {
-                if (CakeWriting.Length > MaxWritingLength())
-                    return MaxWritingLength();                
-                else
-                    return CakeWriting.Length;
-            }
-        }
-
         public bool CakeWritingTooLong
         {
             get
@@ -58,22 +50,11 @@ namespace Oreilly_Csharp_ch6_PartyPlanner_3_P274
             }
         }
 
-        private decimal CalculateCostOfDecorations()
-        {
-            decimal costOfDecorations;
-            if (FancyDecorations)
-                costOfDecorations = (NumberOfPeople * 15.00M) + 50M;
-            else
-                costOfDecorations = (NumberOfPeople * 7.50M) + 30M;
-            return costOfDecorations;
-        }
-
-        public decimal Cost
+        override public decimal Cost
         {
             get
             {
-                decimal totalCost = CalculateCostOfDecorations();
-                totalCost += CostOfFoodPerPerson * NumberOfPeople;
+                decimal totalCost = base.Cost;
                 decimal cakeCost;
                 if (CakeSize() == 8)
                     cakeCost = 40M + ActualLength * .25M;

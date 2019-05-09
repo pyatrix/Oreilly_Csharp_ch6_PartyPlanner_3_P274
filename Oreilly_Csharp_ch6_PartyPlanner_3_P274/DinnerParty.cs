@@ -6,38 +6,36 @@ using System.Threading.Tasks;
 
 namespace Oreilly_Csharp_ch6_PartyPlanner_3_P274
 {
-    class DinnerParty
+    class DinnerParty: Party
     {
-        public const int CostOfFoodPerPerson = 25;
-        public int NumberOfPeople;
-        public decimal CostOfBeveragesPerPerson;
-        public decimal CostOfDecorations = 0;
-        public bool HealthyDecorations { get; set; }
-        public bool FancyDecorations { get; set; }
-
-        public DinnerParty (int numberOfPeople, bool healthyDecoration, bool fancyDecorations)
+        public bool HealthyOption { get; set; }
+        public DinnerParty(int numberOfPeople, bool healthyDecoration, bool fancyDecorations)
         {
             NumberOfPeople = numberOfPeople;
-            HealthyDecorations = healthyDecoration;
             FancyDecorations = fancyDecorations;
-            
+            HealthyOption = healthyDecoration;
         }
 
-        public decimal Cost
+
+        private decimal CalculateCostOfBeveragesPerPerson()
+        {
+            decimal costOfBeveragesPerperson;
+            if (HealthyOption)
+                costOfBeveragesPerperson = 5.00M;
+            else
+                costOfBeveragesPerperson = 20.00M;
+            return costOfBeveragesPerperson;
+        }
+
+        override public decimal Cost
         {
             get
             {
-                if (HealthyDecorations)
-                    CostOfBeveragesPerPerson = 5.00M;
-                else
-                    CostOfBeveragesPerPerson = 20.00M;
-
-                if (FancyDecorations)
-                    CostOfDecorations = (NumberOfPeople * 15.00M) + 50M;
-                else
-                    CostOfDecorations = (NumberOfPeople * 7.50M) + 30M;
-
-                return (25M + CostOfBeveragesPerPerson) * NumberOfPeople + CostOfDecorations;
+                decimal totalCost = base.Cost;
+                totalCost += CalculateCostOfBeveragesPerPerson() * NumberOfPeople;
+                if (HealthyOption)
+                    totalCost *= .95M;
+                return totalCost;
             }
         }
     }
